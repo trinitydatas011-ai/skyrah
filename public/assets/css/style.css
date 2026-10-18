@@ -1101,7 +1101,7 @@ footer{background:var(--rice-dim); color:var(--ink); padding:80px 0 30px;}
 .filter-tabs button:hover{opacity:1; border-color:var(--turmeric);}
 .filter-tabs button.active{background:var(--turmeric); color:#fff; border-color:var(--turmeric); opacity:1;}
 .result-count{font-family:var(--mono); font-size:12px; font-weight:600; color:var(--millet); opacity:0.7;}
-.p-price.real{font-size:16px; font-weight:800; color:var(--ink);}
+.p-price.real{font-size:21px; line-height:1.1; font-weight:800; color:var(--ink);}
 .p-card-link{display:flex; flex-direction:column; height:100%; color:inherit;}
 .empty-state{padding:80px 0; text-align:center; font-family:var(--mono); font-size:13px; opacity:0.55; letter-spacing:0.05em;}
 
