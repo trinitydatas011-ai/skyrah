@@ -30,7 +30,7 @@ live enquiries require the full Vercel + Supabase deployment; GitHub Pages canno
 | FAQs | Questions grouped by topic, reorder |
 | Testimonials | Genuine customer reviews — the home page section appears only when there is at least one |
 | Enquiries | Messages from the Contact page: new / read / replied, reply by email or WhatsApp, delete |
-| Company details | Company name, director, phones, WhatsApp number, email, website, address, map, FSSAI / GSTIN / IEC, shipping note, social links — used across every page |
+| Company details | Company name, director, phones, WhatsApp number, email, website, address, map, FSSAI / GSTIN / CIN / IEC, shipping note, social links — used across every page |
 | Password & backup | Change password (signs out other devices), download a full backup |
 
 Photos are resized in the browser before upload (max 1600 px). Portrait 3:4 photos fit the

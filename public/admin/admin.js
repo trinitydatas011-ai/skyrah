@@ -1014,6 +1014,7 @@
       section('Registrations', 'Shown in the footer and on product pages when filled in.',
         '<div class="grid-3">' + fInput({ name: 'fssai', label: 'FSSAI licence no.', value: s.fssai, max: 40 }) +
         fInput({ name: 'gstin', label: 'GSTIN', value: s.gstin, max: 30 }) +
+        fInput({ name: 'cin', label: 'CIN', value: s.cin, max: 30 }) +
         fInput({ name: 'iec', label: 'IEC (Import Export Code)', value: s.iec, max: 30 }) + '</div>') +
       section('Shipping note', 'Shown in the “Shipping” tab on every product page.',
         fText({ name: 'shippingNote', label: 'Shipping text', value: s.shippingNote, max: 1000, rows: 3 })) +

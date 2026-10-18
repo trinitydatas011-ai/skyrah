@@ -559,6 +559,12 @@ h1.hero-title{
 }
 .p-add:hover{background:var(--clay); transform:translateY(-2px);}
 .p-add svg{width:11px; height:11px; flex-shrink:0;}
+@media(max-width:560px){
+  .p-card-heading{width:100%; gap:8px;}
+  .p-card-heading .p-price.real{font-size:clamp(16px,5vw,21px);}
+  .p-card .p-foot{width:100%; box-sizing:border-box;}
+  .p-card .p-foot .p-add{margin-inline:auto;}
+}
 
 /* ---------- INGREDIENT WHEEL (signature — cosmic orbit) ---------- */
 /* Section is sized to fit as one self-contained frame under the sticky
