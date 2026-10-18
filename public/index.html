@@ -449,12 +449,14 @@ function productCard(p){
         <div class="price-badge small"><span class="pb-label">Price</span><span class="pb-amount">${formatINR(p.price)}</span></div>
       </div>
       <div class="p-script">${escHtml(p.cat)}</div>
-      <h3>${escHtml(p.name)}</h3>
+      <div class="p-card-heading">
+        <h3>${escHtml(p.name)}</h3>
+        <div class="p-price real">${formatINR(p.price)} ${mrpHtml(p)}</div>
+      </div>
       <p>${escHtml(p.desc)}${p.weight ? ' &middot; ' + escHtml(p.weight) : ''}</p>
     </a>
     <div class="p-foot">
-      <div class="p-price real">${formatINR(p.price)} ${mrpHtml(p)}</div>
-      <a class="p-add" href="${productUrl(p)}">View <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="p-add" href="${productUrl(p)}">VIEW <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>`;
 }

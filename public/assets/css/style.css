@@ -544,18 +544,21 @@ h1.hero-title{
 .p-media img.img-fallback{object-fit:contain; padding:22%; opacity:0.5;}
 .p-card .price-badge.small{position:absolute;}
 .p-script{font-family:'Playfair Display', serif; font-weight:700; font-size:14px; color:var(--ink); line-height:1; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.03em;}
-.p-card h3{font-family:var(--serif); font-size:21px; font-weight:800; margin-bottom:6px; color:var(--ink);}
+.p-card-heading{display:flex; align-items:center; justify-content:space-between; gap:10px; min-width:0; margin-bottom:6px;}
+.p-card h3{font-family:var(--serif); font-size:21px; font-weight:800; line-height:1.15; margin:0; color:var(--ink); flex:1; min-width:0; overflow-wrap:anywhere;}
+.p-card-heading .p-price{flex-shrink:0; white-space:nowrap;}
 .p-card .p-cat{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--clay); margin-bottom:6px;}
 .p-card p{font-size:13px; color:var(--millet); opacity:0.85; margin-bottom:16px; flex:1;}
-.p-foot{display:flex; align-items:center; justify-content:space-between; gap:10px; padding-top:14px; border-top:1px solid rgba(43,13,15,0.12);}
+.p-foot{display:flex; align-items:center; justify-content:center; padding-top:16px; margin-top:16px; border-top:1px solid rgba(43,13,15,0.12);}
 .p-price{font-family:var(--serif); font-size:15px; font-weight:700; color:var(--ink);}
 .p-price .strike{opacity:0.45; text-decoration:line-through; margin-left:6px; font-size:12px; font-weight:500;}
 .p-add{
-  font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; display:flex; align-items:center; gap:6px;
+  width:100%; max-width:220px; min-height:44px; box-sizing:border-box;
+  font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; display:flex; align-items:center; justify-content:center; gap:6px;
   background:var(--turmeric); color:#fff; padding:10px 16px; border-radius:999px; transition:background .3s var(--ease), transform .3s var(--ease);
 }
 .p-add:hover{background:var(--clay); transform:translateY(-2px);}
-.p-add svg{width:11px; height:11px;}
+.p-add svg{width:11px; height:11px; flex-shrink:0;}
 
 /* ---------- INGREDIENT WHEEL (signature — cosmic orbit) ---------- */
 /* Section is sized to fit as one self-contained frame under the sticky
