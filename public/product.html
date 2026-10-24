@@ -136,7 +136,8 @@
         </div>
 
         <div class="pd-actions">
-          <button type="button" class="btn" id="addToCartBtn">Order on WhatsApp</button>
+          <button type="button" class="btn" id="addToCartBtn">Add to Bag</button>
+          <a href="checkout.html" class="btn ghost" id="buyNowBtn">Buy Now</a>
           <a href="contact.html" class="btn ghost" id="enquiryBtn">Bulk / Export Enquiry</a>
         </div>
 
@@ -229,6 +230,7 @@
 
 <script src="/api/data/products"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/cart.js"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const product = getProductBySlug(params.get('slug') || '') || (!params.get('slug') ? PRODUCTS[0] : null);
@@ -324,9 +326,14 @@ if(!product){
   const qtyVal = document.getElementById('qtyVal');
   document.getElementById('qtyMinus').addEventListener('click', ()=>{ qty = Math.max(1, qty-1); qtyVal.textContent = qty; });
   document.getElementById('qtyPlus').addEventListener('click', ()=>{ qty = Math.min(99, qty+1); qtyVal.textContent = qty; });
+  const buyNow = document.getElementById('buyNowBtn');
+  if(!product.inStock || !product.price){ buyNow.hidden = true; if(!product.price){ orderBtn.textContent = 'Order on WhatsApp'; } }
   orderBtn.addEventListener('click', ()=>{
-    window.open(waLink(orderText(product, qty)), '_blank', 'noopener');
+    if(!product.price){ window.open(waLink(orderText(product, qty)), '_blank', 'noopener'); return; }
+    Cart.add(product.slug, qty);
+    showToast(product.name + ' added to your bag');
   });
+  buyNow.addEventListener('click', ()=>{ Cart.add(product.slug, qty); });
 
   /* ---------- tabs ---------- */
   document.querySelectorAll('.pd-tab-head button').forEach(btn=>{

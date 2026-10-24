@@ -186,6 +186,7 @@
 
 <script src="/api/data/products"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/cart.js"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const usedCats = CATEGORIES.filter(c => PRODUCTS.some(p => p.catSlug === c.slug));
@@ -235,7 +236,7 @@ function renderGrid(){
       </a>
       <div class="p-foot">
         ${p.inStock
-          ? `<button type="button" class="p-add" data-add="${escHtml(p.slug)}">ORDER <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>`
+          ? `<button type="button" class="p-add" data-add="${escHtml(p.slug)}">ADD TO BAG <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>`
           : `<a class="p-add" href="contact.html?product=${encodeURIComponent(p.slug)}">Enquire</a>`}
       </div>
     </div>
@@ -243,7 +244,10 @@ function renderGrid(){
   gridEl.querySelectorAll('[data-add]').forEach(btn=>{
     btn.addEventListener('click', ()=>{
       const p = getProductBySlug(btn.dataset.add);
-      if(p) window.open(waLink(orderText(p, 1)), '_blank', 'noopener');
+      if(!p) return;
+      if(!p.price){ location.href = 'contact.html?product=' + encodeURIComponent(p.slug); return; }
+      Cart.add(p.slug, 1);
+      showToast(p.name + ' added to your bag');
     });
   });
   gsap.set('.p-card', {opacity:1, y:0, scale:1});

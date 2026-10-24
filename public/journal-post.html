@@ -200,6 +200,7 @@
 <script src="/api/data/products"></script>
 <script src="/api/data/journal"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/cart.js"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const article = getArticleBySlug(params.get('post') || '') || (!params.get('post') ? ARTICLES[0] : null);

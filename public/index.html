@@ -436,6 +436,7 @@
 <script src="/api/data/products"></script>
 <script src="/api/data/journal"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/cart.js"></script>
 <script>
 /* ---------- featured products (tick "Feature on home page" in the admin) ---------- */
 const featuredList = (FEATURED_SLUGS.length ? FEATURED_SLUGS : PRODUCTS.map(p=>p.slug)).map(getProductBySlug).filter(Boolean).slice(0,6);
